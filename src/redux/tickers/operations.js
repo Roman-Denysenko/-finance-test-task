@@ -5,10 +5,10 @@ import { getTickers } from './actions';
 const url = 'http://localhost:4000/';
 
 export const socketConnect = () => dispatch => {
-  const socket = io(url);
-
-  socket.on('connect', () => {
-    console.log(socket);
+  const socket = io.connect(url);
+  socket.emit('start');
+  socket.on('ticker', function (response) {
+    const res = Array.isArray(response) ? response : [response];
+    dispatch(getTickers(res));
   });
-  // dispatch(getTickers());
 };
