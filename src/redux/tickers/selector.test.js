@@ -15,4 +15,5 @@ test('get state', () => {
   ];
   const getState = getTickersSelector(state);
   expect(getState.length).toBe(1);
+  expect(getState).toEqual(state);
 });
