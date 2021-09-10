@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { useTable, useRowState } from 'react-table';
+import { useTable } from 'react-table';
 import { useSelector } from 'react-redux';
 
 import { getTickersSelector } from '../../redux/tickers/selectors';
